@@ -1,5 +1,6 @@
 # CS109-harvard-data-sicence
 
+## Table of Contents
 CS109 Key Facets
 • data munging/scraping/sampling/cleaning in order to get an
 informative, manageable data set;
@@ -35,6 +36,26 @@ Act III: Clustering & Text
 • Deep Learning
 • Guest Lecture: Experimental Design
 
+## Requirements
 ```bash
 pip install -r requirements.txt
+```
+
+## Python Notes
+```python
+per_user = ratings.groupby('user_id').apply(lambda f: f.mean())
+```
+
+## Scraping Notes
+Using urllib2
+```python
+url = 'http://www.crummy.com/software/BeautifulSoup'
+source = urllib2.urlopen(url).read()
+print source.find('Soup')
+```
+Using BeautifulSoup
+```python
+soup = bs4.BeautifulSoup(source)
+link_list = [l.get('href') for l in soup.findAll('a')]
+external_links = [l for l in link_list if l is not None and l.startswith('http')]
 ```
