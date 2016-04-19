@@ -106,3 +106,11 @@ FROM achat
 WHERE tarif = (SELECT Max(Tarif) FROM achat)
 
 ## Statistical Models
+- Exponential distribution (charge et décharge d'un condensateur)
+- Weibull distribution (hazard en fonction du lifetime)
+- Binomial distribution (number of successes of a Bernoulli test)
+- Poisson distribution (number of events through time)
+- Normal distribution (with CLT, 68-95-99.7% rule)
+- Inference = Bootstrap
+
+## 
