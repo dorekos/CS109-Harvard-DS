@@ -41,12 +41,14 @@ Act III: Clustering & Text
 pip install -r requirements.txt
 ```
 
-## Python Notes
+# Notes
+
+## Python
 ```python
 per_user = ratings.groupby('user_id').apply(lambda f: f.mean())
 ```
 
-## Scraping Notes
+## Scraping
 Using urllib2
 ```python
 url = 'http://www.crummy.com/software/BeautifulSoup'
@@ -59,3 +61,48 @@ soup = bs4.BeautifulSoup(source)
 link_list = [l.get('href') for l in soup.findAll('a')]
 external_links = [l for l in link_list if l is not None and l.startswith('http')]
 ```
+
+## SQL
+SGBD= systeme de gestion de bqse de données
+commande CREATE
+- noms
+- champs
+- types
+- recommendé: primary-key
+Définit le schema
+Pour créer une table temporaire: le nom de la table doit être précédé par un #
+
+commande ALTER
+
+commande DROP
+
+commande INSERT
+le schema est sous-entendu à partir du moment où tu specifies la table dans laquelle tu veux ajouter qqc
+
+commande UPDATE
+
+SELECT * FROM candidates;
+
+Toutes ces méthodes ressortent des lignes
+si on veut stocker le resultat on fait SELECT INTO, et ça créée une nouvelle table
+
+JOIN
+- Inner (Implicit)
+- Left
+- Right
+
+Fonction D'aggrégation
+l'équivalent de pandas.Dataframe.describe()
+
+AVG
+GROUP BY
+
+La clause Having (un filtre)
+pour les fonctions d'agrégations
+
+Les sous -requêtes:
+SELECT *
+FROM achat
+WHERE tarif = (SELECT Max(Tarif) FROM achat)
+
+## Statistical Models
