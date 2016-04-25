@@ -113,4 +113,16 @@ WHERE tarif = (SELECT Max(Tarif) FROM achat)
 - Normal distribution (with CLT, 68-95-99.7% rule)
 - Inference = Bootstrap
 
-## 
+## Probability
+"In all of these cases, there is either a model (a fair coin, an election forecasting model, a weather differential equation), or an experiment ( a large number of coin tosses) that is used to estimate a probability, or the odds, of an event E occuring."
+Random Number Generator in numpy: np.random.choice
+"The model created by combining the probabilities we obtained from Predictwise with the simulation of a biased coin flip corresponding to the win probability in each states leads us to obtain a histogram of election outcomes. We are plotting the probabilities of a prediction, so we call this distribution over outcomes the predictive distribution. Simulating from our model and plotting a histogram allows us to visualize this predictive distribution. In general, such a set of probabilities is called a probability distribution or probability mass function."
+
+Various ways to get random numbers:
+1. np.random.choice chooses items randomly from an array, with or without replacement
+2. np.random.random gives us uniform randoms on [0.0,1.0)
+3. np.random.randint gives us random integers in some range
+4. np.random.randn gives us random samples from a Normal distribution, which we talk about later.
+5. scipy.stats.distrib gives us stuff from a distribution. Here distrib could be binom for example, as above. distrib.pdf or distrib.pmf give us the density or mass function, while cdf gives us the cumulaive distribution function. Just using distrib as a function with its params creates a random variable generating object, from which random variables can be generated in the form distrib(params).rvs(size).
+
+## Sampling
